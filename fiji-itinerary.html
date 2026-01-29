@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>推薦行程 - Regent Tour</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://www.rts.com.tw/bundles/ContentCustomRWD2?v=OCFyForfHi0WqtXLXunMQvM_zdUfu-UtJrLpeNtgVks1" rel="stylesheet"/>
+    <link href="https://www.rts.com.tw/ContentCustomRWD2/bootstrap/4.3.1/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+    <link id="style0604" rel="stylesheet" href="https://www.rts.com.tw/ContentCustomRWD2/css/style0604.css">
+    <link rel="stylesheet" type="text/css" href="https://www.rts.com.tw/ContentCustomRWD2/green/colour.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        #video-hero-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            background: #000;
+        }
+        #video-hero-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.8;
+        }
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="head_top" class="container_bk">
+        <div class="container_top">
+            <div class="toplogobox">
+                <div class="logoimg">
+                    <a href="index.html"><img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" alt="大翔旅遊"></a>
+                </div>
+            </div>
+            <div class="toplink">
+                <ul class="toplink_head">
+                    <li><a href="index.html"><i class="fa fa-home"></i>首頁</a></li>
+                    <li><a href="fiji-itinerary.html" class="text-green-600">推薦行程</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grouprow">
+        <div id="video-hero-container">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-the-beach-at-sunset-4654-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">斐濟推薦行程</h1>
+            </div>
+        </div>
+
+        <div class="container mx-auto py-16 px-4" id="editable-content">
+            <div class="space-y-12">
+
+                <!-- Itinerary 1 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
+                    <div class="md:w-2/5 h-64 md:h-auto relative">
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6" class="w-full h-full object-cover">
+                        <div class="absolute top-0 left-0 bg-orange-500 text-white px-4 py-1 rounded-br-lg font-bold">自由行</div>
+                    </div>
+                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">夢幻斐濟雙島自由行 8日</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">入住外島五星度假村 Sheraton Tokoriki，享受真正的跳島假期。含Cloud 9海上酒吧行程，體驗極致浪漫。</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">外島住宿</span>
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">蜜月首選</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-green-600">NT$ 58,900 起</span>
+                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Itinerary 2 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
+                    <div class="md:w-2/5 h-64 md:h-auto relative">
+                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62" class="w-full h-full object-cover">
+                        <div class="absolute top-0 left-0 bg-orange-500 text-white px-4 py-1 rounded-br-lg font-bold">自由行</div>
+                    </div>
+                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">熱情斐濟主島自由行 8日</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">入住Denarau島五星酒店，交通便利，方便參加各種出海行程。適合喜歡自主安排活動的旅客。</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">交通便利</span>
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">高CP值</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-green-600">NT$ 49,900 起</span>
+                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Itinerary 3 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
+                    <div class="md:w-2/5 h-64 md:h-auto relative">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21" class="w-full h-full object-cover">
+                        <div class="absolute top-0 left-0 bg-blue-600 text-white px-4 py-1 rounded-br-lg font-bold">團體旅遊</div>
+                    </div>
+                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">悠遊斐濟假期 8日 (團體)</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">全程中文導遊陪同，深入Sigatoka河流探險，拜訪傳統村落，含全餐與所有門票，無購物壓力。</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">中文導遊</span>
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">全包式</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-green-600">NT$ 72,800 起</span>
+                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container_foot" style="background-color:#898e94 !important;">
+        <div id="box_foot" class="flex flex-col md:flex-row justify-between items-center py-10 container mx-auto px-4">
+            <div class="foot_logo"><img class="h-12" src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png"></div>
+            <div class="text-white text-xs text-center md:text-right">
+                <p>翔茂旅行社股份有限公司</p>
+                <p>&copy; 2024 Regent Tour.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hydration Script for Admin Edits -->
+    <script>
+        (function() {
+            const pageId = 'fiji-itinerary';
+            const savedContent = localStorage.getItem('page_content_' + pageId);
+            if (savedContent) {
+                document.getElementById('editable-content').innerHTML = savedContent;
+            }
+        })();
+    </script>
+</body>
+</html>

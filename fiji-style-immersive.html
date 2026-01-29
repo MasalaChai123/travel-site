@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>斐濟沉浸式體驗 - Regent Tour 大翔旅遊</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://www.rts.com.tw/bundles/ContentCustomRWD2?v=OCFyForfHi0WqtXLXunMQvM_zdUfu-UtJrLpeNtgVks1" rel="stylesheet"/>
+    <link href="https://www.rts.com.tw/ContentCustomRWD2/bootstrap/4.3.1/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+    <link id="style0604" rel="stylesheet" href="https://www.rts.com.tw/ContentCustomRWD2/css/style0604.css">
+    <link rel="stylesheet" type="text/css" href="https://www.rts.com.tw/ContentCustomRWD2/green/colour.css" />
+
+    <style>
+        .video-bg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            opacity: 0.9;
+        }
+        .content-overlay {
+            background: rgba(0,0,0,0.5);
+            min-height: calc(100vh - 160px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #head_top { position: relative; z-index: 100; }
+        .container_foot { position: relative; z-index: 100; }
+    </style>
+</head>
+<body class="bg-black">
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-resort-and-turquoise-water-42172-large.mp4" type="video/mp4">
+    </video>
+
+    <!-- Legacy Header -->
+    <div id="head_top" class="container_bk bg-white">
+        <div class="container_top">
+            <div class="toplogobox">
+                <div class="logoimg">
+                    <a href="index.html">
+                        <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" alt="大翔旅遊">
+                    </a>
+                </div>
+            </div>
+            <div class="toplink">
+                <ul class="toplink_head">
+                    <li><a href="index.html" class="text-green-600"><i class="fa fa-home"></i>首頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-overlay">
+        <div class="text-center text-white px-4">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">BULA!</h1>
+            <p class="text-xl md:text-3xl font-light mb-12 drop-shadow-lg tracking-widest">斐濟：世界上最快樂的地方</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="itinerary-fit.html" class="px-12 py-4 bg-green-600 text-white rounded-full font-bold text-lg hover:bg-green-700 transition-all transform hover:scale-105 shadow-2xl">
+                    立即探索行程
+                </a>
+                <a href="hotels.html" class="px-12 py-4 bg-white/10 backdrop-blur-md border border-white/40 text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all transform hover:scale-105 shadow-2xl">
+                    預訂五星度假村
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legacy Footer -->
+    <div class="container_foot" style="background-color:#898e94 !important;">
+        <div id="box_foot" class="flex flex-col md:flex-row justify-between items-center py-10 container mx-auto px-4">
+            <div class="text-white text-xs text-center w-full">
+                <p>翔茂旅行社股份有限公司 | 交觀甲字第7634號 | 台北總公司：(02)2322-5219</p>
+                <p class="mt-2">&copy; 2024 Regent Tour. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

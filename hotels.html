@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斐濟精選飯店 - Regent Tour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <nav class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="font-bold text-2xl">Regent Tour</a>
+                <div class="hidden md:flex text-sm gap-4 text-blue-200">
+                    <a href="fiji-selection.html" class="hover:text-white">← 返回行程選擇</a>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">TWD</button>
+                <button class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">繁體中文</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar (Booking style) -->
+    <div class="bg-gradient-to-r from-blue-900 to-blue-800 pb-8 pt-4 px-4">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold text-white mb-2">尋找斐濟最完美的住宿</h1>
+            <p class="text-blue-200 text-sm mb-6">從豪華水上屋到溫馨家庭度假村，應有盡有</p>
+            
+            <div class="bg-yellow-500 p-1 rounded shadow-lg flex flex-col md:flex-row gap-1 max-w-4xl">
+                <div class="bg-white flex-1 p-3 rounded flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" placeholder="你想去斐濟哪裡？ (例如: Denarau)" class="w-full outline-none text-gray-700">
+                </div>
+                <div class="bg-white flex-1 p-3 rounded flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <input type="text" placeholder="入住日期 - 退房日期" class="w-full outline-none text-gray-700">
+                </div>
+                <button class="bg-blue-600 text-white font-bold px-8 py-3 rounded hover:bg-blue-700 transition-colors">搜尋</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-6">
+        
+        <!-- Sidebar Filters -->
+        <aside class="w-full md:w-1/4 space-y-6">
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <h3 class="font-bold text-gray-800 mb-3 border-b pb-2">篩選條件</h3>
+                
+                <!-- Budget -->
+                <div class="mb-4">
+                    <h4 class="font-semibold text-sm mb-2">飯店預算</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="budget" value="Low" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">經濟實惠 (Low)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="budget" value="Medium" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">中價位 (Medium)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="budget" value="High" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">高級 (High)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="budget" value="Luxury" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">奢華享受 (Luxury)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="mb-4">
+                    <h4 class="font-semibold text-sm mb-2">所在地區</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="location" value="Mamanuca Islands" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">Mamanuca Islands</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="location" value="Denarau Island" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">Denarau Island</span>
+                        </label>
+                         <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="location" value="Coral Coast" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">Coral Coast</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Type -->
+                <div class="mb-4">
+                    <h4 class="font-semibold text-sm mb-2">飯店類型</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="type" value="Resort" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">Resort (度假村)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="type" value="Hotel" class="filter-cb text-blue-600 rounded">
+                            <span class="text-sm">Hotel (飯店)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Results -->
+        <main class="flex-1">
+            <!-- Sorting Bar -->
+            <div class="flex justify-between items-center mb-4 bg-white p-3 rounded border border-gray-200 shadow-sm">
+                <div class="text-sm text-gray-600 font-bold" id="result-count">找到 0 間飯店</div>
+                <div class="flex items-center gap-2 text-sm">
+                    <span>排序方式:</span>
+                    <select id="sort-select" class="border border-gray-300 rounded p-1 outline-none focus:border-blue-500">
+                        <option value="recommended">為您推薦</option>
+                        <option value="price-low">價格: 低至高</option>
+                        <option value="price-high">價格: 高至低</option>
+                        <option value="rating">評分: 高至低</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Hotel List -->
+            <div id="hotel-list" class="space-y-4">
+                <!-- Items injected by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { hotels, filterHotels, sortHotels } from './js/hotel-data.js';
+
+        const hotelListEl = document.getElementById('hotel-list');
+        const sortSelect = document.getElementById('sort-select');
+        const resultCountEl = document.getElementById('result-count');
+        const filterCheckboxes = document.querySelectorAll('.filter-cb');
+
+        function render(list) {
+            resultCountEl.textContent = `找到 ${list.length} 間飯店`;
+            
+            if (list.length === 0) {
+                hotelListEl.innerHTML = '<div class="p-8 text-center text-gray-500 bg-white rounded">沒有符合條件的飯店。</div>';
+                return;
+            }
+
+            hotelListEl.innerHTML = list.map(hotel => `
+                <div class="bg-white border border-gray-200 rounded-lg p-4 flex flex-col md:flex-row gap-4 hover:shadow-lg transition-shadow">
+                    <!-- Image -->
+                    <div class="w-full md:w-48 h-48 flex-shrink-0 relative">
+                        <img src="${hotel.image}" class="w-full h-full object-cover rounded-md" alt="${hotel.name}">
+                        <div class="absolute top-2 left-2 bg-gray-900/70 text-white text-xs px-2 py-1 rounded">
+                            ${hotel.type}
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-blue-600 cursor-pointer hover:text-blue-800">${hotel.name}</h3>
+                                <div class="flex items-center gap-1">
+                                    <div class="bg-blue-900 text-white font-bold px-2 py-1 rounded-br rounded-tl text-sm">${hotel.rating}</div>
+                                </div>
+                            </div>
+                            <div class="text-sm text-blue-500 underline mt-1 cursor-pointer">${hotel.location}</div>
+                            
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                ${hotel.tags.map(tag => `<span class="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded border border-gray-200">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="mt-4 md:mt-0 flex flex-col items-end">
+                             <div class="text-xs text-gray-500">每晚, 1位入住</div>
+                             <div class="text-2xl font-bold text-gray-800">TWD ${hotel.price.toLocaleString()}</div>
+                             <div class="text-xs text-gray-400 mb-2">含稅與其他費用</div>
+                             <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors flex items-center gap-1">
+                                查看客房 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                             </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function update() {
+            // 1. Collect Filters
+            const filters = {
+                locations: [],
+                types: [],
+                budgets: []
+            };
+
+            filterCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    if (cb.name === 'location') filters.locations.push(cb.value);
+                    if (cb.name === 'type') filters.types.push(cb.value);
+                    if (cb.name === 'budget') filters.budgets.push(cb.value);
+                }
+            });
+
+            // 2. Filter Data
+            let filtered = filterHotels(filters);
+
+            // 3. Sort Data
+            const sortType = sortSelect.value;
+            filtered = sortHotels(filtered, sortType);
+
+            // 4. Render
+            render(filtered);
+        }
+
+        // Event Listeners
+        filterCheckboxes.forEach(cb => cb.addEventListener('change', update));
+        sortSelect.addEventListener('change', update);
+
+        // Initial Render
+        render(hotels);
+
+    </script>
+</body>
+</html>

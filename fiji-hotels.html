@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>精選飯店 - Regent Tour</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://www.rts.com.tw/bundles/ContentCustomRWD2?v=OCFyForfHi0WqtXLXunMQvM_zdUfu-UtJrLpeNtgVks1" rel="stylesheet"/>
+    <link href="https://www.rts.com.tw/ContentCustomRWD2/bootstrap/4.3.1/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+    <link id="style0604" rel="stylesheet" href="https://www.rts.com.tw/ContentCustomRWD2/css/style0604.css">
+    <link rel="stylesheet" type="text/css" href="https://www.rts.com.tw/ContentCustomRWD2/green/colour.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        #video-hero-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            background: #000;
+        }
+        #video-hero-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.8;
+        }
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="head_top" class="container_bk">
+        <div class="container_top">
+            <div class="toplogobox">
+                <div class="logoimg">
+                    <a href="index.html"><img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" alt="大翔旅遊"></a>
+                </div>
+            </div>
+            <div class="toplink">
+                <ul class="toplink_head">
+                    <li><a href="index.html"><i class="fa fa-home"></i>首頁</a></li>
+                    <li><a href="fiji-hotels.html" class="text-green-600">精選飯店</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grouprow">
+        <div id="video-hero-container">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-resort-pool-with-ocean-view-4252-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">精選度假村</h1>
+            </div>
+        </div>
+
+        <div class="container mx-auto py-16 px-4" id="editable-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-green-600 pl-4">斐濟攻略 - 度假篇</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Hotel 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1540541338287-417002060d05" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Likuliku Lagoon Resort</h3>
+                        <p class="text-green-600 text-sm font-bold mb-3">#唯一水上屋 #成人限定</p>
+                        <p class="text-gray-600 text-sm mb-4">斐濟唯一擁有水上屋的度假村，專為蜜月情侶設計，提供極致隱私與奢華。</p>
+                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">InterContinental Fiji</h3>
+                        <p class="text-green-600 text-sm font-bold mb-3">#親子友善 #高爾夫</p>
+                        <p class="text-gray-600 text-sm mb-4">位於著名的Natadola海灘，擁有世界級高爾夫球場，適合全家大小一同入住。</p>
+                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1fb8bea3f45" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Sheraton Fiji Resort</h3>
+                        <p class="text-green-600 text-sm font-bold mb-3">#交通便利 #丹那勞島</p>
+                        <p class="text-gray-600 text-sm mb-4">位於交通樞紐丹那勞島，離碼頭最近，方便前往各大離島，設施完善。</p>
+                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container_foot" style="background-color:#898e94 !important;">
+        <div id="box_foot" class="flex flex-col md:flex-row justify-between items-center py-10 container mx-auto px-4">
+            <div class="foot_logo"><img class="h-12" src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png"></div>
+            <div class="text-white text-xs text-center md:text-right">
+                <p>翔茂旅行社股份有限公司</p>
+                <p>&copy; 2024 Regent Tour.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hydration Script for Admin Edits -->
+    <script>
+        (function() {
+            const pageId = 'fiji-hotels';
+            const savedContent = localStorage.getItem('page_content_' + pageId);
+            if (savedContent) {
+                document.getElementById('editable-content').innerHTML = savedContent;
+            }
+        })();
+    </script>
+</body>
+</html>
