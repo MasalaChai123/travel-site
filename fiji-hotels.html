@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>精選飯店 - Regent Tour</title>
+    <title>斐濟攻略－住宿篇 - Regent Tour</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,6 +38,13 @@
             background: rgba(0,0,0,0.3);
             z-index: 1;
         }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -51,7 +58,8 @@
             <div class="toplink">
                 <ul class="toplink_head">
                     <li><a href="index.html"><i class="fa fa-home"></i>首頁</a></li>
-                    <li><a href="fiji-hotels.html" class="text-green-600">精選飯店</a></li>
+                    <li><a href="fiji-landing.html">斐濟旅遊指南</a></li>
+                    <li><a href="#" class="text-green-600">住宿篇</a></li>
                 </ul>
             </div>
         </div>
@@ -60,52 +68,205 @@
     <div class="grouprow">
         <div id="video-hero-container">
             <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-resort-pool-with-ocean-view-4252-large.mp4" type="video/mp4">
+                <source src="https://cdn.pixabay.com/video/2019/05/22/23847-338662970_large.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
             <div class="absolute inset-0 flex items-center justify-center z-20">
-                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">精選度假村</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">斐濟攻略－住宿篇</h1>
             </div>
         </div>
 
         <div class="container mx-auto py-16 px-4" id="editable-content">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-green-600 pl-4">斐濟攻略 - 度假篇</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Hotel 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1540541338287-417002060d05" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-2">Likuliku Lagoon Resort</h3>
-                        <p class="text-green-600 text-sm font-bold mb-3">#唯一水上屋 #成人限定</p>
-                        <p class="text-gray-600 text-sm mb-4">斐濟唯一擁有水上屋的度假村，專為蜜月情侶設計，提供極致隱私與奢華。</p>
-                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
-                    </div>
-                </div>
-
-                <!-- Hotel 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-2">InterContinental Fiji</h3>
-                        <p class="text-green-600 text-sm font-bold mb-3">#親子友善 #高爾夫</p>
-                        <p class="text-gray-600 text-sm mb-4">位於著名的Natadola海灘，擁有世界級高爾夫球場，適合全家大小一同入住。</p>
-                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
-                    </div>
-                </div>
-
-                <!-- Hotel 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1439066615861-d1fb8bea3f45" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-800 mb-2">Sheraton Fiji Resort</h3>
-                        <p class="text-green-600 text-sm font-bold mb-3">#交通便利 #丹那勞島</p>
-                        <p class="text-gray-600 text-sm mb-4">位於交通樞紐丹那勞島，離碼頭最近，方便前往各大離島，設施完善。</p>
-                        <button class="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition-colors">查看房型</button>
-                    </div>
-                </div>
-
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">經濟住宿如何選？</h2>
+                <p class="text-xl text-gray-600">斐濟挑選度假村原則大公開</p>
+                <div class="w-20 h-1 bg-green-600 mx-auto mt-6"></div>
             </div>
+
+            <!-- 1. By Budget -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                    <span class="bg-green-100 text-green-700 w-10 h-10 rounded-full flex items-center justify-center text-lg"><i class="fas fa-coins"></i></span>
+                    依照旅遊預算
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Economic -->
+                    <div class="section-card bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-green-400">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">經濟型</h4>
+                            <p class="text-green-600 font-bold mb-4">NT$ 1,000 ~ 3,000 / 晚</p>
+                            
+                            <div class="space-y-4 text-sm text-gray-600">
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">住宿類型：</strong>
+                                    青年旅館、背包客旅館、簡單民宿、當地村落住宿
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">推薦地區：</strong>
+                                    <ul class="list-disc pl-5">
+                                        <li>南迪 (Nadi)：離機場近，選擇多</li>
+                                        <li>珊瑚海岸 (Coral Coast)</li>
+                                        <li>主島以外的小島 (簡樸選項)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">適合族群：</strong>
+                                    背包客、學生、小資族、自助旅遊者
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medium -->
+                    <div class="section-card bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-blue-400">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">中等價位</h4>
+                            <p class="text-blue-600 font-bold mb-4">NT$ 3,000 ~ 8,000 / 晚</p>
+                            
+                            <div class="space-y-4 text-sm text-gray-600">
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">住宿類型：</strong>
+                                    三/四星級飯店、度假村、特色海邊小屋、家庭式旅館
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">推薦地區：</strong>
+                                    <ul class="list-disc pl-5">
+                                        <li>丹娜繞島：高品質度假村集中，交通方便</li>
+                                        <li>馬洛洛島：海景超美</li>
+                                        <li>太平洋港：多水上活動與探險</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">適合族群：</strong>
+                                    情侶、夫妻、家庭旅遊者、追求舒適者
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury -->
+                    <div class="section-card bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-purple-400">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">高端 / 奢華價位</h4>
+                            <p class="text-purple-600 font-bold mb-4">NT$ 8,000 ~ 50,000+ / 晚</p>
+                            
+                            <div class="space-y-4 text-sm text-gray-600">
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">住宿類型：</strong>
+                                    五星級豪華度假村、私人島嶼、水上屋、高端 Spa Retreats
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">推薦地區：</strong>
+                                    <ul class="list-disc pl-5">
+                                        <li>雅薩瓦群島：自然絕美，私密性高</li>
+                                        <li>瑪瑪努卡群島：電影《浩劫重生》拍攝地</li>
+                                        <li>勞卡拉島：斐濟最奢華私人島</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">適合族群：</strong>
+                                    蜜月、新婚夫妻、高端服務需求者、重視私密空間者
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 2. By Region -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                    <span class="bg-green-100 text-green-700 w-10 h-10 rounded-full flex items-center justify-center text-lg"><i class="fas fa-map-marked-alt"></i></span>
+                    依照旅遊區域
+                </h3>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Main Island -->
+                    <div class="flex-1 bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-xl font-bold text-green-800 mb-4 border-b border-gray-200 pb-2">1. 主島 (Viti Levu)</h4>
+                        <p class="text-sm text-gray-600 mb-4">包含南迪、丹娜繞島、太平洋港、珊瑚海岸等。</p>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-bold text-gray-800 mb-2">主島優勢：</h5>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 距離國際機場近 (特別是納迪)，交通方便</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 選擇多、價位層次廣泛</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 高端飯店價位普遍比外島便宜</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 參加一日遊活動方便</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Outer Islands -->
+                    <div class="flex-1 bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-xl font-bold text-blue-800 mb-4 border-b border-gray-200 pb-2">2. 外島群 (Outer Islands)</h4>
+                        <p class="text-sm text-gray-600 mb-4">主要為瑪瑪努卡群島 (Mamanuca) 與雅薩瓦群島 (Yasawa)，另有私人島嶼。</p>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-bold text-gray-800 mb-2">外島優勢：</h5>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> 景色佳、海水更清澈、浮潛潛水天堂</li>
+                                <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> 更寧靜、度假感強</li>
+                                <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> 有水上屋與特色私人島嶼選擇</li>
+                                <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> 高端與奢華飯店選擇多</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. By Purpose -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                    <span class="bg-green-100 text-green-700 w-10 h-10 rounded-full flex items-center justify-center text-lg"><i class="fas fa-heart"></i></span>
+                    依照旅遊目的
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-pink-300 transition-colors">
+                        <div class="text-pink-500 text-2xl mb-3"><i class="fas fa-kiss-wink-heart"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">蜜月 / 情侶</h4>
+                        <p class="text-sm text-gray-600">選擇 <span class="font-bold text-gray-800">水上屋</span> 或 <span class="font-bold text-gray-800">成人限定度假村</span>，私密性高，浪漫氛圍濃厚。</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-300 transition-colors">
+                        <div class="text-orange-500 text-2xl mb-3"><i class="fas fa-users"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">家庭旅遊</h4>
+                        <p class="text-sm text-gray-600">建議 <span class="font-bold text-gray-800">主島大型五星飯店</span>，設施齊全，有兒童俱樂部、泳池、餐飲方便。</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-300 transition-colors">
+                        <div class="text-blue-500 text-2xl mb-3"><i class="fas fa-swimmer"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">潛水 / 浮潛愛好者</h4>
+                        <p class="text-sm text-gray-600">選在 <span class="font-bold text-gray-800">亞薩瓦群島</span> 或 <span class="font-bold text-gray-800">瑪瑪努卡群島</span> 的小島渡假村，直接下水就能浮潛。</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-purple-300 transition-colors">
+                        <div class="text-purple-500 text-2xl mb-3"><i class="fas fa-spa"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">輕鬆度假 / SPA養生</h4>
+                        <p class="text-sm text-gray-600">大品牌度假村 (如洲際、香格里拉) 附設 SPA、餐廳、各種娛樂設施。</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-green-300 transition-colors">
+                        <div class="text-green-500 text-2xl mb-3"><i class="fas fa-hiking"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">背包冒險</h4>
+                        <p class="text-sm text-gray-600">選擇當地 <span class="font-bold text-gray-800">Guesthouse</span> 或 <span class="font-bold text-gray-800">Eco Lodge</span>，體驗與當地人互動。</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-yellow-300 transition-colors">
+                        <div class="text-yellow-500 text-2xl mb-3"><i class="fas fa-golf-ball"></i></div>
+                        <h4 class="font-bold text-gray-800 mb-2">其他目的 (高爾夫)</h4>
+                        <p class="text-sm text-gray-600">斐濟是高爾夫迷不可錯過的寶地。球場坐落於椰林與海濱之間，一覽無際的南太平洋風光。</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 

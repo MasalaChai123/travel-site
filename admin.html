@@ -42,7 +42,7 @@
             <a href="index.html" target="_blank" class="block w-full text-center px-4 py-2 text-emerald-400 hover:bg-slate-700 rounded text-sm font-bold border border-emerald-900">
                 <i class="fa-solid fa-external-link-alt mr-2"></i> View Live Site
             </a>
-            <div class="text-xs text-center text-gray-500 mt-2">v2.1 Dynamic CMS</div>
+            <div class="text-xs text-center text-gray-500 mt-2">v2.2 Menu Update</div>
         </div>
     </aside>
 
@@ -172,14 +172,24 @@
 
     <script>
         // --- State Management ---
+        // New Structure: Latest News, Island Vacations (Fiji/Palau), Cruise, International, Visa, Taiwan
         let siteData = {
             pages: [
-                { id: 'home', name: 'Home Page', file: 'index.html', parent: null, isSystem: true },
-                { id: 'fiji-intro', name: 'Fiji Introduction', file: 'fiji-intro.html', parent: null, isSystem: true },
-                { id: 'fiji-guide', name: 'Fiji How-to-Play', file: 'fiji-guide.html', parent: null, isSystem: true },
-                { id: 'fiji-itinerary', name: 'Recommended Itineraries', file: 'fiji-itinerary.html', parent: null, isSystem: true },
-                { id: 'fiji-hotels', name: 'Selected Hotels', file: 'fiji-hotels.html', parent: null, isSystem: true },
-                { id: 'palau-guide', name: 'Palau Guide', file: 'palau-guide.html', parent: null, isSystem: true }
+                // Top Level Menus
+                { id: 'home', name: '首頁', file: 'index.html', parent: null, isSystem: true },
+                { id: 'news', name: '最新消息', file: '#', parent: null, isSystem: true },
+                { id: 'islands', name: '海島假期', file: '#', parent: null, isSystem: true },
+                { id: 'cruise', name: '遊輪之旅', file: '#', parent: null, isSystem: true },
+                { id: 'abroad', name: '國外探索', file: '#', parent: null, isSystem: true },
+                { id: 'visa', name: '護照簽證', file: '#', parent: null, isSystem: true },
+                { id: 'taiwan', name: '台灣之美', file: '#', parent: null, isSystem: true },
+
+                // Sub Menus (Children of Islands)
+                { id: 'fiji-intro', name: '斐濟介紹', file: 'fiji-intro.html', parent: 'islands', isSystem: true },
+                { id: 'fiji-guide', name: '斐濟怎麼玩', file: 'fiji-guide.html', parent: 'islands', isSystem: true },
+                { id: 'fiji-itinerary', name: '推薦行程', file: 'fiji-itinerary.html', parent: 'islands', isSystem: true },
+                { id: 'fiji-hotels', name: '精選飯店', file: 'fiji-hotels.html', parent: 'islands', isSystem: true },
+                { id: 'palau-guide', name: '帛琉攻略', file: 'palau-guide.html', parent: 'islands', isSystem: true }
             ]
         };
 
@@ -190,6 +200,15 @@
         window.onload = function() {
             const savedStructure = localStorage.getItem('site_structure');
             if (savedStructure) {
+                // Merge strategies could go here, but for simplicity we assume the new hardcoded default 
+                // overrides if the user resets. If you want to keep user edits but change structure,
+                // you would need complex migration logic. For now, we will use siteData if no localstorage,
+                // or if the user clicks "Reset".
+                // NOTE: To force this new structure on existing users without clicking reset, 
+                // we would usually check a version flag.
+                
+                // Let's use the saved structure but if it looks old (missing 'islands'), we might warn or just use it.
+                // For this demo, we will check if the user has custom data, if not, use the new structure.
                 siteData = JSON.parse(savedStructure);
             }
             renderSidebar();
@@ -201,7 +220,6 @@
             nav.innerHTML = '';
             
             // 1. Render Root Items
-            // Note: We iterate the full array to respect user-defined order
             const rootPages = siteData.pages.filter(p => !p.parent);
             rootPages.forEach(page => {
                 nav.appendChild(createNavItem(page));
@@ -227,12 +245,15 @@
             div.onclick = (e) => {
                 // Prevent click if clicking actions
                 if(e.target.closest('.actions')) return;
+                // If it is a placeholder menu (like file='#'), don't load
+                if(page.file === '#' || page.file === '') return; 
                 loadPage(page.id);
             };
 
+            const iconClass = page.file === '#' ? 'fa-folder' : 'fa-file-lines';
             const titleSpan = document.createElement('div');
             titleSpan.className = "flex items-center gap-2 overflow-hidden";
-            titleSpan.innerHTML = `<i class="fa-regular fa-file-lines text-xs"></i> <span class="truncate text-sm font-medium">${page.name}</span>`;
+            titleSpan.innerHTML = `<i class="fa-regular ${iconClass} text-xs"></i> <span class="truncate text-sm font-medium">${page.name}</span>`;
             
             // Actions
             const actions = document.createElement('div');
@@ -287,7 +308,6 @@
             if (!page) return;
 
             // Get all siblings in their current order in the main array
-            // We use siteData.pages to ensure we are looking at the persistent order
             const siblings = siteData.pages.filter(p => p.parent === page.parent);
             const siblingIndex = siblings.findIndex(p => p.id === id);
             
@@ -369,6 +389,11 @@
             currentPageId = id;
             const page = siteData.pages.find(p => p.id === id);
             
+            if (!page.file || page.file === '#') {
+                alert("This is a menu category, not an editable page.");
+                return;
+            }
+
             // Update Header
             document.getElementById('page-info-display').classList.remove('hidden');
             document.getElementById('welcome-msg').classList.add('hidden');
@@ -421,7 +446,7 @@
             const content = document.getElementById('visual-editor').innerHTML;
             localStorage.setItem('page_content_' + currentPageId, content);
 
-            // Save Structure as well (simulating backend update)
+            // Save Structure as well
             localStorage.setItem('site_structure', JSON.stringify(siteData));
 
             // Feedback
@@ -436,7 +461,7 @@
         }
 
         function resetToDefault() {
-            if(confirm("Reset entire CMS to default? All custom pages and edits will be lost.")) {
+            if(confirm("Reset entire CMS to default structure? All custom pages and edits will be lost.")) {
                 localStorage.clear();
                 location.reload();
             }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>推薦行程 - Regent Tour</title>
+    <title>斐濟攻略－行程篇 - Regent Tour</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,6 +38,32 @@
             background: rgba(0,0,0,0.3);
             z-index: 1;
         }
+        .tour-card {
+            transition: all 0.3s ease;
+        }
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .badge-rec {
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .badge-chinese {
+            background-color: #f59e0b; /* amber-500 */
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +77,8 @@
             <div class="toplink">
                 <ul class="toplink_head">
                     <li><a href="index.html"><i class="fa fa-home"></i>首頁</a></li>
-                    <li><a href="fiji-itinerary.html" class="text-green-600">推薦行程</a></li>
+                    <li><a href="fiji-landing.html">斐濟旅遊指南</a></li>
+                    <li><a href="#" class="text-green-600">行程篇</a></li>
                 </ul>
             </div>
         </div>
@@ -60,82 +87,750 @@
     <div class="grouprow">
         <div id="video-hero-container">
             <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-the-beach-at-sunset-4654-large.mp4" type="video/mp4">
+                <source src="https://cdn.pixabay.com/video/2019/04/23/23011-332483109_large.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
             <div class="absolute inset-0 flex items-center justify-center z-20">
-                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">斐濟推薦行程</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg font-sans">斐濟攻略－行程篇</h1>
             </div>
         </div>
 
         <div class="container mx-auto py-16 px-4" id="editable-content">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">斐濟熱門一日遊 / 半日遊精選</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="mt-4 text-gray-500 mb-8">豐富多樣的出海行程與陸地探險，讓您的斐濟假期更精彩！</p>
+                <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145321244.jpg" class="w-full max-w-4xl mx-auto rounded-xl shadow-lg" alt="斐濟一日遊地圖">
+            </div>
+            
             <div class="space-y-12">
 
-                <!-- Itinerary 1 -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
-                    <div class="md:w-2/5 h-64 md:h-auto relative">
-                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6" class="w-full h-full object-cover">
-                        <div class="absolute top-0 left-0 bg-orange-500 text-white px-4 py-1 rounded-br-lg font-bold">自由行</div>
-                    </div>
-                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">夢幻斐濟雙島自由行 8日</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">入住外島五星度假村 Sheraton Tokoriki，享受真正的跳島假期。含Cloud 9海上酒吧行程，體驗極致浪漫。</p>
-                            <div class="flex gap-2 mb-4">
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">外島住宿</span>
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">蜜月首選</span>
+                <!-- 01 Linked -->
+                <a href="fiji-tour-south-sea-sailing.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-green-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145322494.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow">出海行程</div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">01. 帆船一日遊 South Sea Sailing</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    南海公司全新雙體帆船 Sabre 每天穿行於 Mamanuca 群島。擁有大型遮陽篷、豆袋與靠背座椅，提供足夠空間讓您盡情享受田園詩般的景致。含早茶、自助午餐，全天提供免費軟飲，午餐時段提供 2 小時啤酒與葡萄酒。停靠沙灘游泳、放鬆並在熱帶珊瑚礁浮潛（提供裝備，有滑梯入水）。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 珊瑚海岸、楠迪區域免費接送</p>
+                                    <p><span class="font-bold text-green-700">出發地點：</span> 丹那努島、楠迪、珊瑚海岸</p>
+                                    <p class="md:col-span-2"><span class="font-bold text-green-700">時間：</span> 出發約 9:45，返回約 16:45</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-green-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-2xl font-bold text-green-600">NT$ 58,900 起</span>
-                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
-                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Itinerary 2 -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
-                    <div class="md:w-2/5 h-64 md:h-auto relative">
-                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62" class="w-full h-full object-cover">
-                        <div class="absolute top-0 left-0 bg-orange-500 text-white px-4 py-1 rounded-br-lg font-bold">自由行</div>
-                    </div>
-                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">熱情斐濟主島自由行 8日</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">入住Denarau島五星酒店，交通便利，方便參加各種出海行程。適合喜歡自主安排活動的旅客。</p>
-                            <div class="flex gap-2 mb-4">
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">交通便利</span>
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">高CP值</span>
+                <!-- 02 Linked -->
+                <a href="fiji-tour-south-sea-island.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-green-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145323416.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">02. 南海島 South Sea Island</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    搭乘高速雙體船 30 分鐘抵達私人小島。體驗浮潛、帆船、皮划艇、按摩(自費)。含 BBQ 午餐、酒水。可乘坐「探索珊瑚號」半潛船。午餐時間有 Meke 舞蹈表演(週日除外)。另有適合親子的「尋找尼莫」路線。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">出發地點：</span> 丹那努島、楠迪</p>
+                                    <p class="md:col-span-2"><span class="font-bold text-green-700">選項：</span> 一日遊 (9:00-17:00)、半日遊 (12:15出發)、尋找尼莫 (9:00-12:00)、巡遊組合 (9:00-15:00)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-green-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-2xl font-bold text-green-600">NT$ 49,900 起</span>
-                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
-                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Itinerary 3 -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
-                    <div class="md:w-2/5 h-64 md:h-auto relative">
-                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21" class="w-full h-full object-cover">
-                        <div class="absolute top-0 left-0 bg-blue-600 text-white px-4 py-1 rounded-br-lg font-bold">團體旅遊</div>
-                    </div>
-                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">悠遊斐濟假期 8日 (團體)</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">全程中文導遊陪同，深入Sigatoka河流探險，拜訪傳統村落，含全餐與所有門票，無購物壓力。</p>
-                            <div class="flex gap-2 mb-4">
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">中文導遊</span>
-                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded text-sm">全包式</span>
+                <!-- 03 Linked -->
+                <a href="fiji-tour-malamala-beach-club.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-green-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145324322.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">03. 瑪拉瑪拉島海島俱樂部 Malamala Beach Club</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    世界第一個島嶼海灘俱樂部。擁有網紅無邊際泳池，是最佳打卡點。提供免費 WiFi、毛巾。島上餐飲單點(自費)，享受南太平洋的各種藍色與休閒時光。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 珊瑚海岸、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">出發地點：</span> 丹那努島、楠迪、珊瑚海岸</p>
+                                    <p class="md:col-span-2"><span class="font-bold text-green-700">時間：</span> 一日遊 (10:00-16:15/17:15)、半日遊 (12:00-17:15)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-green-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-2xl font-bold text-green-600">NT$ 72,800 起</span>
-                            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">查看詳情</button>
+                    </div>
+                </a>
+
+                <!-- 04 Linked -->
+                <a href="fiji-tour-castaway-island.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-green-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145325229.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">04. 放逐島一日遊 Castaway Island Resort</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    每日限量 20 位。豪華高速雙體船巡遊，在清澈海水中浮潛。體驗非機動水上活動（皮划艇、風帆）。在露台餐廳享用兩道式或自助 BBQ 午餐。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 約 9:30 - 18:00</p>
+                                    <p class="md:col-span-2 text-xs text-gray-500 mt-1">* 每日限量20名，額滿為止</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-green-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <!-- 05 Linked -->
+                <a href="fiji-tour-kuata-island.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145326494.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">05. 夸塔島鯊魚浮潛 Kuata Island</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    前往 Yasawa 群島最近的 Kuata 島。最刺激的是出海與野生白鰭鯊、黑鰭鯊共舞（無需潛水證，浮潛即可見）。島上風景原始，有獨特的骷髏頭形狀山峰。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪 (僅浮潛免費)</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 8:45 - 18:00</p>
+                                    <p class="md:col-span-2 text-xs text-red-500 mt-1">* 鯊魚深潛不含接送，請自行前往碼頭</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 06 Linked -->
+                <a href="fiji-tour-beqa-shark-dive.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-blue-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145327385.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors">06. 貝卡環礁鯊魚潛水 Beqa Shark Dive</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    終極鯊魚潛水體驗！深度 15-30 米。可見公牛鯊、虎鯊、護士鯊等多種鯊魚及繽紛軟珊瑚。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 僅太平洋港地區接送，需包車前往</p>
+                                    <p><span class="font-bold text-green-700">條件：</span> 須持有 OW 潛水證及以上</p>
+                                    <p class="md:col-span-2 text-xs text-gray-500 mt-1">* 需提前3天預約，不含午餐</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-blue-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 07 Linked -->
+                <a href="fiji-tour-beachcomber-island.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-sky-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145327932.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-sky-700 transition-colors">07. 巨浪島 Beachcomber Island Resort</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    年輕活力的私人小島。含自助午餐。可體驗玻璃底船、餵魚。自費項目豐富：拖傘、摩托車、潛水。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島區域免費接送</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 9:00 或 16:00 出發</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-sky-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 08A Linked -->
+                <a href="fiji-tour-sleeping-giant-zipline.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145329151.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">08A. 沉睡巨人叢林滑索 Sleeping Giant Zipline</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    位於沉睡巨人山脈，飛越樹頂與叢林。結束後可在無污染的山泉溪流游泳。含漢堡簡餐。適合 6-80 歲健康遊客。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 8:30 - 13:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 08B Linked -->
+                <a href="fiji-tour-momi-bay-zipline.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145340963.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">08B. 莫米灣叢林滑索 Momi Bay Zipline</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    總長 5 公里，16 條繩索。可欣賞 360 度美景與海景。包含石灰石洞穴探險，探索獨特的生態系統。含簡餐。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 洲際、萬豪、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 8:30 - 13:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 09 Linked -->
+                <a href="fiji-tour-cultural-village.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145329729.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">09. 斐濟文化村 Fiji Cultural Village</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    深入了解斐濟傳統：雕刻、陶藝、編織、Kava 儀式。觀看 Lovo (地爐大餐)製作。欣賞 Meke 戰舞與火把舞(夜遊)。含自助 Lovo 午餐/晚餐。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費 (珊瑚海岸需加價)</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 日遊 10:00-14:00 / 夜遊 17:30-20:30</p>
+                                    <p class="md:col-span-2 text-xs text-gray-500 mt-1">* 含中文講解，夜遊增加火把舞！(周日公休)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 10 Linked -->
+                <a href="fiji-tour-cloud-9.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145330619.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">10. 海上酒吧 Cloud 9</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    全球唯一的複式海上浮動酒吧。擁有意大利木質披薩烤爐、DJ 音樂、日光浴床。可從二樓跳水入海。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域、洲際免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 一日遊 9:00-15:00 / 半日遊 13:00-19:00</p>
+                                    <p class="md:col-span-2 text-xs text-red-500 mt-1">* 僅限信用卡消費，不接待 10 歲以下兒童</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 11 Linked -->
+                <a href="fiji-tour-seventh-heaven.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-cyan-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145331885.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-cyan-700 transition-colors">11. 第七天堂 Seventh Heaven</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    擁有兩個大型日光甲板、國際酒吧/餐廳。可從浮橋跳水、浮潛。享受美食與音樂。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 僅丹那努島含接送</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 9:00 - 16:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-cyan-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 12 Linked -->
+                <a href="fiji-tour-coral-cat.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row border-l-4 border-l-red-500 group-hover:border-cyan-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145332823.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-cyan-700 transition-colors">12. 珊瑚貓一日遊 Coral Cat</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    搭乘 20 米雙體船前往 Malolo 大堡礁浮潛。在 Musket Cove 享用 BBQ 自助午餐。回程有機會尋找海豚。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 9:30 - 17:30</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-cyan-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 13 Linked -->
+                <a href="fiji-tour-robinson-crusoe.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row border-l-4 border-l-orange-500 group-hover:border-orange-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145333698.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-orange-700 transition-colors">13. 魯賓遜島 Robinson Crusoe</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    擁有多種路線：文化日遊(赤腳走火石)、螃蟹之旅(抓泥蟹)、夜遊(火舞表演)、日夜連遊。含叢林遊船、Lovo 午餐/晚餐。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 珊瑚海岸、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 日遊 10:00-15:30 / 夜遊 18:00-22:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-orange-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 14A Linked -->
+                <a href="fiji-tour-tivua-island.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row border-l-4 border-l-red-500 group-hover:border-red-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145334276.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">14A. 庫克船長心型島一日遊 Tivua Island</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    搭乘帆船前往心型島 Tivua。全天自由活動：浮潛、玻璃底船、皮划艇。含無限量酒水及自助 BBQ 午餐。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 10:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 14B Linked -->
+                <a href="fiji-tour-captain-cook-dinner.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row border-l-4 border-l-red-500 group-hover:border-red-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145341854.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">14B. 庫克船長日落晚餐 Captain Cook</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    傍晚乘船出海，欣賞全球最美的晚霞。享用 BBQ 晚餐與傳統歌舞表演。含一杯香檳。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 僅楠迪區域、洲際飯店</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 17:30 - 20:30 (5-9月提早半小時)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 15 Linked -->
+                <a href="fiji-tour-fishing.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-blue-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145335182.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors">15. 斐濟近海海釣 Fishing</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    僅接受包船預訂。提供專業魚竿、誘餌。釣到的魚可帶回中餐廳加工。體驗與海搏鬥的樂趣。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 不含接送</p>
+                                    <p><span class="font-bold text-green-700">選項：</span> 4 小時或 8 小時包船</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-blue-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 16 Linked -->
+                <a href="fiji-tour-skydive.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row border-l-4 border-l-red-500 group-hover:border-red-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145337604.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">16. 跳傘 Skydive</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    從 10,000 至 13,000 英呎高空躍下，享受長達 60 秒自由落體。俯瞰美麗的珊瑚礁群島。提供第三方攝影服務(需預約)。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">限制：</span> 體重 95kg 以上加價，115kg 以上不接待</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 17 Linked -->
+                <a href="fiji-tour-helicopter.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-purple-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145335791.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-purple-700 transition-colors">17. 直升機觀光 Helicopter</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    從高空俯瞰七彩大海、心形沙灘(Tavarua)與 Mamanuca 群島。可安排直升機前往外島一日遊。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時長：</span> 觀光飛行 25-55 分鐘</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-purple-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 18A Linked -->
+                <a href="fiji-tour-nadi-cultural.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145336666.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">18A. 楠迪一日遊 Nadi Day Tour</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    探訪第一村莊(First Landing)、Viseisei 總統村、沉睡巨人蘭花園、楠迪文化市場。感受自然與人文。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 9:00 - 12:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 18B Linked -->
+                <a href="fiji-tour-nadi-half-day.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-amber-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145343573.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-amber-700 transition-colors">18B. 楠迪半日遊 Nadi Half Day</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    參觀總統村、南太平洋最大的印度廟、楠迪鎮菜市場與手工藝市場採購。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 9:00 - 13:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-amber-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 19A Linked -->
+                <a href="fiji-tour-southern-tour-a.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-red-300 transition-colors border-l-4 border-l-red-500">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/800x600_251128165229325.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-rec"><i class="fas fa-star"></i> 推薦路線</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">19A. 南部一日遊 Southern Tour</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    遊覽 Sigatoka 沙丘國家公園、Kula 生態公園(野生動物園)、美麗的珊瑚海岸與馬尾灣棧橋。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費</p>
+                                    <p><span class="text-xs text-gray-500 mt-1">* 中文服務需申請</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-red-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 19B Linked -->
+                <a href="fiji-tour-southern-tour-b.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-amber-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128171414708.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-chinese"><i class="fas fa-language"></i> 中文服務</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-amber-700 transition-colors">19B. 南部一日遊 (瀑布+文化)</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    騎馬進入原始森林觀賞瀑布。前往珊瑚海岸棧橋享用 BBQ 午餐。參觀斐濟文化村。提供中文服務。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 丹那努島、楠迪區域免費</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 8:45 - 15:45</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-amber-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 20 Linked -->
+                <a href="fiji-tour-suva-city.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-blue-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/800x600_251128145319901.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors">20. 蘇瓦一日遊 Suva City Tour</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    前往首都蘇瓦(車程約 4 小時)。參觀總統官邸、蘇瓦博物館(了解食人歷史)、瑟斯頓花園、大型傳統市場。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費</p>
+                                    <p><span class="text-xs text-gray-500 mt-1">* 中文服務需申請</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-blue-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 21 Linked -->
+                <a href="fiji-tour-sigatoka-river-safari.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-amber-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x600_251128145340041.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="badge-chinese"><i class="fas fa-trophy"></i> 屢獲殊榮</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-amber-700 transition-colors">21. 幸加托卡 快艇漂流 Sigatoka River Safari</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    獲獎行程！搭乘噴射快艇深入斐濟最長河流，拜訪真實的斐濟村落，體驗 Kava 儀式與傳統午餐，含遊河講解。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪/丹那努/珊瑚海岸等多區免費接送</p>
+                                    <p><span class="font-bold text-green-700">時間：</span> 上午團 8:45 / 下午團 13:00 (時長4.5小時)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-amber-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 22 Linked -->
+                <a href="fiji-tour-dolphin-journey.html" class="block group">
+                    <div class="tour-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col md:flex-row group-hover:border-sky-300 transition-colors">
+                        <div class="md:w-1/3 h-64 md:h-auto relative">
+                            <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/斐濟一日遊/801x601_251128145350885.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-sky-700 transition-colors">22. 海豚一日遊 Dolphin Journey</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    前往太陽海岸(Suncoast)的海豚灣，乘船觀賞野生長吻飛旋海豚。體驗手線釣魚或浮潛。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 border border-gray-200">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <p><span class="font-bold text-green-700">接送：</span> 楠迪區域免費 (車程約2小時)</p>
+                                    <p><span class="font-bold text-green-700">備註：</span> 4 人起訂，4 歲以下不宜</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right text-sky-600 font-bold group-hover:underline">
+                                查看詳細內容 <i class="fas fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
             </div>
         </div>

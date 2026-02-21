@@ -19,11 +19,6 @@
     <script src="https://www.rts.com.tw/Scripts/jquery-1.11.2.min.js"></script>
     <script src="https://www.rts.com.tw/Scripts/bootstrap/4.3.1/bootstrap.bundle.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://www.rts.com.tw/ContentCustomRWD2/css/owl.carousel.min.css">
-    <link href="https://www.rts.com.tw/ContentCustomRWD2/bootstrap.daterangepicker/daterangepicker.css" rel="stylesheet" />
-    <link href="https://www.rts.com.tw/ContentCustomRWD2/OwlCarousel2/2.3.4/owl.carousel.min.css" rel="stylesheet" />
-    <link href="https://www.rts.com.tw/ContentCustomRWD2/OwlCarousel2/2.3.4/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="https://www.rts.com.tw/ContentCustomRWD2/swiper11/swiper-bundle.min.css" rel="stylesheet" />
     <link id="style0604" rel="stylesheet" href="https://www.rts.com.tw/ContentCustomRWD2/css/style0604.css">
     <link rel="stylesheet" type="text/css" href="https://www.rts.com.tw/ContentCustomRWD2/green/colour.css" />
     
@@ -32,32 +27,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
-        #video-hero-container {
+        /* Custom Carousel Styles */
+        .carousel-container {
             position: relative;
             width: 100%;
-            height: 620px;
+            height: 600px;
             overflow: hidden;
             background: #000;
         }
-        #video-hero-container video {
+        .carousel-slide {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
             z-index: 0;
+            display: none; /* Hide for performance, block when active */
         }
-        .video-overlay {
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+            display: block;
+        }
+        .carousel-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.3);
-            z-index: 1;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+            z-index: 2;
         }
+        .carousel-content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5%;
+            right: 5%;
+            z-index: 3;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .carousel-content {
+                text-align: left;
+                left: 5%;
+                right: auto;
+            }
+        }
+        
+        /* Navigation Dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Override legacy header styles to ensure visibility */
+        #head_top {
+            background-color: #ffffff !important;
+            height: auto !important;
+            padding-bottom: 0px;
+        }
+        .container_top {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex; /* Override block */
+        }
+        
         @media (max-width: 768px) {
-            #video-hero-container { height: 400px; }
+            .carousel-container { height: 400px; }
+            .container_top { flex-direction: column; }
         }
     </style>
 <script type="importmap">
@@ -67,113 +130,293 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <div id="head_top" class="container_bk">
-        <div class="container_top">
-            <div class="toplogobox">
-                <div class="logoimg">
+    <!-- Floating Social Buttons (Right Side) -->
+    <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 font-sans">
+        <a href="https://line.me/R/ti/p/@121mxfwl" target="_blank" class="flex items-center justify-center w-12 h-12 bg-[#00B900] text-white rounded-l-lg shadow-lg hover:w-36 transition-all duration-300 group overflow-hidden relative">
+            <i class="fab fa-line text-2xl absolute right-3"></i>
+            <span class="opacity-0 group-hover:opacity-100 whitespace-nowrap pr-10 pl-4 font-bold transition-opacity duration-300">加LINE好友</span>
+        </a>
+        <a href="https://www.instagram.com/regent_tours?utm_source=qr" target="_blank" class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white rounded-l-lg shadow-lg hover:w-36 transition-all duration-300 group overflow-hidden relative">
+            <i class="fab fa-instagram text-2xl absolute right-3"></i>
+            <span class="opacity-0 group-hover:opacity-100 whitespace-nowrap pr-10 pl-4 font-bold transition-opacity duration-300">追蹤 IG</span>
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <div id="head_top" class="w-full shadow-sm z-50 relative border-b border-gray-100 bg-white">
+        <div class="container mx-auto px-4 py-2">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center min-h-[80px]">
+                
+                <!-- Logo & Mobile Toggle Row -->
+                <div class="w-full md:w-auto flex justify-between items-center">
+                    <!-- Logo -->
                     <a href="index.html">
-                        <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" title="Regent Tour" alt="大翔旅遊">
+                        <img src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" title="Regent Tour" alt="大翔旅遊" class="h-12 md:h-16 w-auto object-contain">
                     </a>
+
+                    <!-- Hamburger Button (Mobile Only) -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
-            </div>
-            <div class="toplink">
-                <ul class="toplink_head">
-                    <li><a href="#gofooter"><i class="fa fa-share-alt-square"></i>聯絡我們</a></li>
-                    <li><a href="#"><i class="fa fa-share-alt-square"></i>公司簡介</a></li>
-                    <li><a href="index.html" class="text-green-600 font-bold"><i class="fa fa-home"></i>首頁</a></li>
-                </ul>
-                <ul id="accordion" class="accordion toplink_menu">
-                    <li><div class="link"><a href="#">護照/簽證<i class="fa fa-chevron-down"></i></a></div></li>
-                    <li><div class="link"><a href="fiji-intro.html">旅遊指南 (斐濟)<i class="fa fa-chevron-down"></i></a></div></li>
-                    <li><div class="link"><a href="palau-guide.html">帛琉攻略<i class="fa fa-chevron-down"></i></a></div></li>
-                </ul>
+
+                <!-- Navigation Block (Hidden on Mobile by default) -->
+                <div id="nav-content" class="hidden md:flex flex-col items-center md:items-end gap-2 w-full md:w-auto mt-4 md:mt-0 pb-4 md:pb-0 transition-all duration-300">
+                    
+                    <!-- Top Utility Row -->
+                    <ul class="flex gap-4 text-sm font-medium text-amber-500 w-full md:w-auto justify-center md:justify-end items-center">
+                        <li><a href="index.html" class="hover:text-amber-600 transition-colors flex items-center gap-1"><i class="fa fa-home"></i> 首頁</a></li>
+                        <li><a href="#" class="hover:text-amber-600 transition-colors flex items-center gap-1"><i class="fa fa-info-circle"></i> 公司簡介</a></li>
+                        <li><a href="#gofooter" class="hover:text-amber-600 transition-colors flex items-center gap-1"><i class="fa fa-phone"></i> 聯絡我們</a></li>
+                        
+                        <!-- Social Icons in Header -->
+                        <li class="border-l border-amber-200 h-4 mx-1 hidden md:block"></li>
+                        <li class="hidden md:block">
+                            <a href="https://line.me/R/ti/p/@121mxfwl" target="_blank" class="text-[#00B900] hover:text-[#009900] transition-colors" title="LINE Official">
+                                <i class="fab fa-line text-lg"></i>
+                            </a>
+                        </li>
+                        <li class="hidden md:block">
+                            <a href="https://www.instagram.com/regent_tours?utm_source=qr" target="_blank" class="text-[#E1306C] hover:text-[#C13584] transition-colors" title="Instagram">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Main Menu Row -->
+                    <ul class="flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center gap-y-4 gap-x-6 font-bold text-teal-700 text-base md:text-lg w-full md:w-auto">
+                        <!-- 1. 最新活動快訊 -->
+                        <li>
+                            <a href="#" class="flex items-center gap-1 hover:text-teal-900 transition-colors group">
+                                <i class="fas fa-bullhorn group-hover:text-teal-600"></i> 最新活動快訊
+                            </a>
+                        </li>
+                        
+                        <!-- 2. 海島度假行程 (Dropdown) -->
+                        <li class="relative group z-50 w-full md:w-auto text-center md:text-left">
+                            <a href="fiji-style-editorial.html" class="flex items-center justify-center md:justify-start gap-1 hover:text-teal-900 transition-colors py-2 group">
+                                <i class="fas fa-umbrella-beach group-hover:text-teal-600"></i> 海島度假行程 <i class="fas fa-chevron-down text-xs ml-1"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                             <ul class="md:absolute hidden group-hover:block bg-white md:shadow-xl md:border-t-4 md:border-teal-600 rounded-b-lg py-2 w-full md:w-48 md:right-0 text-sm font-normal text-gray-700 top-full relative border-l-4 border-teal-100 md:border-l-0">
+                                <li><a href="fiji-landing.html" class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700">斐濟 (Fiji)</a></li>
+                                <li><a href="palau-landing.html" class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700">帛琉 (Palau)</a></li>
+                                <li><a href="maldives-landing.html" class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700">馬爾地夫 (Maldives)</a></li>
+                                <li><a href="bali-landing.html" class="block px-4 py-2 hover:bg-teal-50 hover:text-teal-700">峇里島 (Bali)</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- 3. 歐洲遊輪探索 -->
+                        <li>
+                            <a href="#" class="flex items-center gap-1 hover:text-teal-900 transition-colors group">
+                                <i class="fas fa-ship group-hover:text-teal-600"></i> 歐洲遊輪探索
+                            </a>
+                        </li>
+
+                        <!-- 4. 國外精選行程 -->
+                        <li>
+                            <a href="#" class="flex items-center gap-1 hover:text-teal-900 transition-colors group">
+                                <i class="fas fa-plane-departure group-hover:text-teal-600"></i> 國外精選行程
+                            </a>
+                        </li>
+
+                        <!-- 5. 探索魅力台灣 -->
+                        <li>
+                            <a href="#" class="flex items-center gap-1 hover:text-teal-900 transition-colors group">
+                                <i class="fab fa-envira group-hover:text-teal-600"></i> 探索魅力台灣
+                            </a>
+                        </li>
+
+                        <!-- 6. 關於護照簽證 -->
+                        <li>
+                            <a href="#" class="flex items-center gap-1 hover:text-teal-900 transition-colors group">
+                                <i class="fas fa-id-card group-hover:text-teal-600"></i> 關於護照簽證
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="grouprow">
         <div class="groupimbox">
-            <!-- Hero Section: Video -->
-            <div id="video-hero-container">
-                <video autoplay muted loop playsinline>
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-tropical-beach-with-palm-trees-and-blue-water-4126-large.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay"></div>
-                <div class="absolute inset-0 flex items-center justify-center z-20">
-                    <div class="text-center text-white px-4">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" style="font-family: 'Noto Sans TC', sans-serif;">大翔旅遊 Regent Tour</h1>
-                        <p class="text-lg md:text-2xl font-light drop-shadow-md">南太平洋的海島專家</p>
+            
+            <!-- Custom Mixed Media Carousel -->
+            <div class="carousel-container" id="hero-carousel">
+                <!-- Slides will be injected by JS -->
+                <div class="carousel-dots" id="carousel-dots"></div>
+                
+                <!-- Overlay for Text -->
+                <div class="carousel-overlay"></div>
+                
+                <!-- Dynamic Content Display -->
+                <div class="carousel-content">
+                    <h2 class="text-3xl md:text-6xl font-bold mb-2 font-sans tracking-wide transition-all" id="slide-title">Loading...</h2>
+                    <p class="text-base md:text-2xl font-light" id="slide-subtitle"></p>
+                </div>
+            </div>
+
+            <!-- SEARCH BOX SECTION (No Overlap) -->
+            <div class="container mx-auto px-4 relative z-20 py-8">
+                <!-- Header Tab -->
+                <div class="inline-block bg-[#00a0e9] text-white px-6 py-3 text-lg font-bold rounded-t-lg">
+                    <i class="fas fa-search mr-2"></i>旅遊查詢
+                </div>
+
+                <!-- Form Container -->
+                <div class="bg-white rounded-b-lg rounded-tr-lg shadow-lg p-6 md:p-8 border-t-4 border-[#00a0e9] border-l border-r border-b border-gray-100">
+                    <!-- Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <!-- Row 1 -->
+                        <div class="relative">
+                            <select class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <option>出發城市不限</option>
+                                <option>台北</option>
+                                <option>高雄</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <input type="text" placeholder="目的地" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        </div>
+                        <div class="relative">
+                            <input type="text" placeholder="出發日期區間" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="relative">
+                            <select class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <option>旅遊天數不限</option>
+                                <option>5天以下</option>
+                                <option>6-10天</option>
+                                <option>10天以上</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <select class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <option>旅遊預算不限</option>
+                                <option>3萬以下</option>
+                                <option>3-5萬</option>
+                                <option>5萬以上</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <input type="text" placeholder="請輸入關鍵字" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-2.5 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-6 border-t border-gray-100 pt-6">
+                        
+                        <!-- Tabs -->
+                        <div class="flex">
+                            <button class="px-4 py-2 bg-[#20b2aa] text-white font-medium flex items-center rounded-l shadow-sm"><i class="fas fa-check mr-1"></i> 以行程分類搜尋</button>
+                            <button class="px-4 py-2 bg-gray-100 text-gray-600 font-medium hover:bg-gray-200 border border-gray-200 border-l-0 rounded-r">以每日行程搜尋</button>
+                        </div>
+
+                        <!-- Sorting -->
+                        <div class="flex items-center gap-4 text-sm text-gray-600">
+                            <span class="font-bold hidden md:inline">排列順序:</span>
+                            <label class="flex items-center cursor-pointer hover:text-blue-500">
+                                <input type="radio" name="sort" checked class="mr-1 text-[#00a0e9] focus:ring-[#00a0e9]"> 依出發日期
+                            </label>
+                            <label class="flex items-center cursor-pointer hover:text-blue-500">
+                                <input type="radio" name="sort" class="mr-1 text-[#00a0e9] focus:ring-[#00a0e9]"> 依售價
+                            </label>
+                        </div>
+
+                        <!-- Search Button -->
+                        <button class="w-full lg:w-auto px-10 py-2 bg-[#00a0e9] hover:bg-[#008bc9] text-white rounded font-bold transition-colors shadow-md flex items-center justify-center">
+                            <i class="fas fa-search mr-2"></i> 搜尋
+                        </button>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Main Categories Navigation -->
-            <div class="container mx-auto py-16 px-4">
+            <!-- Main Categories Navigation Grid -->
+            <div class="container mx-auto py-8 px-4">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800" style="font-family: 'Noto Sans TC', sans-serif;">探索我們的目的地</h2>
-                    <div class="w-16 h-1 bg-green-600 mx-auto mt-4"></div>
+                    <h2 class="text-3xl font-bold text-gray-800" style="font-family: 'Noto Sans TC', sans-serif;">探索熱門目的地</h2>
+                    <div class="w-16 h-1 bg-green-600 mx-auto mt-4 mb-2"></div>
+                    <p class="text-sm text-gray-400">建議圖片尺寸: 800 x 533 px (3:2)</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Fiji Intro -->
-                    <a href="fiji-intro.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    
+                    <!-- 1. 最新活動快訊 -->
+                    <a href="#" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="media/rts-latest-news.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">斐濟介紹</h3>
-                            <p class="text-gray-500 text-sm">認識南太平洋的珍珠，免簽、氣候與基本資訊。</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">最新活動快訊</h3>
+                            <p class="text-gray-500 text-sm">搶先掌握季節限定行程、旅展優惠與獨家促銷，精彩旅程從這裡開始。</p>
                         </div>
                     </a>
 
-                    <!-- Fiji Play -->
-                    <a href="fiji-guide.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <!-- 2. 海島度假行程 -->
+                    <a href="fiji-style-editorial.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="media/rts-islands.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">斐濟怎麼玩？</h3>
-                            <p class="text-gray-500 text-sm">交通攻略、跳島玩法與必去景點全攻略。</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">海島度假行程</h3>
+                            <p class="text-gray-500 text-sm">斐濟、帛琉、馬爾地夫。投入蔚藍大海的懷抱，享受奢華水上屋與私人沙灘。</p>
                         </div>
                     </a>
 
-                    <!-- Fiji Itinerary -->
-                    <a href="fiji-itinerary.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <!-- 3. 歐洲遊輪探索 -->
+                    <a href="#" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="media/rts-cruise.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">推薦行程</h3>
-                            <p class="text-gray-500 text-sm">夢幻雙島8日、熱情主島8日、悠遊假期團體遊。</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">歐洲遊輪探索</h3>
+                            <p class="text-gray-500 text-sm">搭乘海上移動城堡，優雅巡航地中海古文明或北歐壯麗峽灣，盡享極致奢華。</p>
                         </div>
                     </a>
 
-                    <!-- Fiji Hotels -->
-                    <a href="fiji-hotels.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <!-- 4. 國外精選行程 -->
+                    <a href="#" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1439066615861-d1fb8bea3f45" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="media/rts-overseas.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">精選飯店</h3>
-                            <p class="text-gray-500 text-sm">嚴選斐濟最具特色的度假村與水上屋。</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">國外精選行程</h3>
+                            <p class="text-gray-500 text-sm">嚴選日本、歐洲、美加深度旅遊，帶您探索異國文化遺產與絕美自然奇景。</p>
                         </div>
                     </a>
 
-                    <!-- Palau -->
-                    <a href="palau-guide.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <!-- 5. 探索魅力台灣 -->
+                    <a href="#" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1516815231560-8f41ec531527" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="media/rts-taiwan.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-500">帛琉攻略</h3>
-                            <p class="text-gray-500 text-sm">上帝的水族箱，水母湖與牛奶湖的奇幻之旅。</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">探索魅力台灣</h3>
+                            <p class="text-gray-500 text-sm">重新發現寶島之美，從山林秘境到在地創生，體驗最道地的台灣人情味。</p>
+                        </div>
+                    </a>
+
+                    <!-- 6. 關於護照簽證 -->
+                    <a href="#" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="media/rts-passport.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">關於護照簽證</h3>
+                            <p class="text-gray-500 text-sm">專業代辦護照換發、各國簽證申請與台胞證，手續簡便，讓您的旅程暢行無阻。</p>
                         </div>
                     </a>
 
@@ -185,7 +428,7 @@
     <!-- Footer Area -->
     <div id="gofooter"></div>
     <div class="container_foot" style="background-color:#898e94 !important;">
-        <div id="box_foot" class="flex flex-col md:flex-row justify-between items-center py-10 container mx-auto px-4">
+        <div id="box_foot" class="flex flex-col md:flex-row justify-between items-center py-6 container mx-auto px-4">
             <div class="foot_logo mb-6 md:mb-0">
                 <img class="foot_top h-16" src="https://cloudgweb.sabretn.com.tw/TPE118090002.regent/PIC/LOGO/930x292_251103165415655.png" alt="Regent Tour">
             </div>
@@ -203,5 +446,161 @@
     </div>
 
     <script src="https://www.rts.com.tw/ContentCustomRWD2/js/top.js"></script>
+    
+    <!-- Carousel Logic -->
+    <script>
+        const slidesData = [
+            {
+                type: 'video',
+                src: 'https://cdn.pixabay.com/video/2019/04/23/23011-332483109_large.mp4',
+                title: '海島假期',
+                subtitle: '斐濟、帛琉，南太平洋的極致享受'
+            },
+            {
+                type: 'image',
+                src: 'https://images.unsplash.com/photo-1548574505-5e239809ee19',
+                title: '遊輪之旅',
+                subtitle: '乘風破浪，體驗海上的移動城堡'
+            },
+            {
+                type: 'image',
+                src: 'https://images.unsplash.com/photo-1516815231560-8f41ec531527',
+                title: '帛琉海底奇觀',
+                subtitle: '探索上帝的水族箱'
+            },
+             {
+                type: 'image',
+                src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1',
+                title: '國外探索',
+                subtitle: '從歐洲古堡到極地探險'
+            },
+            {
+                type: 'image',
+                src: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071',
+                title: '台灣之美',
+                subtitle: '發現寶島的隱藏秘境'
+            },
+             {
+                type: 'image',
+                src: 'https://images.unsplash.com/photo-1530789253388-582c481c54b0',
+                title: '專業簽證代辦',
+                subtitle: '讓您的旅程暢行無阻'
+            }
+        ];
+
+        const container = document.getElementById('hero-carousel');
+        const dotsContainer = document.getElementById('carousel-dots');
+        const titleEl = document.getElementById('slide-title');
+        const subtitleEl = document.getElementById('slide-subtitle');
+        let currentSlide = 0;
+        const slideInterval = 6000; // 6 seconds
+
+        function initCarousel() {
+            slidesData.forEach((data, index) => {
+                // Create Slide Element
+                const slide = document.createElement('div');
+                slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+                
+                if (data.type === 'video') {
+                    const video = document.createElement('video');
+                    video.className = 'carousel-media';
+                    video.muted = true;
+                    video.loop = true;
+                    video.playsInline = true;
+                    video.autoplay = true;
+                    video.src = data.src;
+                    if(index === 0) {
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.log('Initial play prevented:', error);
+                            });
+                        }
+                    }
+                    slide.appendChild(video);
+                } else {
+                    const img = document.createElement('img');
+                    img.className = 'carousel-media';
+                    img.src = data.src;
+                    slide.appendChild(img);
+                }
+
+                container.appendChild(slide);
+
+                // Create Dot
+                const dot = document.createElement('div');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(index);
+                dotsContainer.appendChild(dot);
+            });
+
+            // Set initial text
+            titleEl.textContent = slidesData[0].title;
+            subtitleEl.textContent = slidesData[0].subtitle;
+
+            // Start Loop
+            setInterval(nextSlide, slideInterval);
+        }
+
+        function goToSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            // Pause previous video if it exists
+            const prevVideo = slides[currentSlide].querySelector('video');
+            if(prevVideo) {
+                // Safely pause video
+                try {
+                    prevVideo.pause();
+                    prevVideo.currentTime = 0;
+                } catch(e) {
+                    console.log('Pause interrupted');
+                }
+            }
+
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+
+            // Play new video if it exists
+            const nextVideo = slides[currentSlide].querySelector('video');
+            if(nextVideo) {
+                const playPromise = nextVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log('Slide play interrupted:', error);
+                    });
+                }
+            }
+
+            // Update Text
+            titleEl.textContent = slidesData[currentSlide].title;
+            subtitleEl.textContent = slidesData[currentSlide].subtitle;
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slidesData.length) next = 0;
+            goToSlide(next);
+        }
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('nav-content');
+
+        if(btn && nav) {
+            btn.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+            });
+        }
+
+        // Run
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
